@@ -1,0 +1,14 @@
+@use "sizes" as *;
+@use "colors" as *;
+@use "bigcube" as *;
+
+@mixin bp-tablet {
+  @media (min-width: 768px) and (orientation: portrait) {
+    @include bigCube;
+    .mtscube {
+      .buttons {
+        margin: 0 2em;
+      }
+    }
+  }
+}

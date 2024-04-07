@@ -1,0 +1,83 @@
+@use "sizes" as *;
+@use "colors" as *;
+@use "bigcube" as *;
+
+@mixin bp-landscape {
+  @media (orientation: landscape) and (max-height: 767px) {
+    .burger {
+      z-index: 550;
+    }
+    .logo {
+      display: none;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vmin;
+      height: 100%;
+      margin: auto;
+      max-height: 100%;
+      z-index: -10;
+      overflow: scroll;
+    }
+    .mtscube {
+      .buttons {
+        transform: translateY(-105%);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        &--isactive {
+          transform: translatey(0);
+        }
+        .button-menu {
+          margin: 0;
+          min-width: 33%;
+        }
+      }
+
+      .cube-section {
+        .cube-box {
+          width: $cubeSizeMobileLand;
+          height: $cubeSizeMobileLand;
+          .cube {
+            .front {
+              transform: translateZ(calc($cubeSizeMobileLand/2));
+            }
+            .right {
+              transform: rotateY(90deg) translateZ(calc($cubeSizeMobileLand/2));
+            }
+            .back {
+              transform: rotateY(180deg) rotatez(180deg)
+                translateZ(calc($cubeSizeMobileLand/2));
+            }
+            .left {
+              transform: rotateY(270deg) translateZ(calc($cubeSizeMobileLand/2));
+            }
+            .top {
+              transform: translateY(-50%) rotateX(90deg);
+            }
+            .bottom {
+              transform: translateY(50%) rotateX(270deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (orientation: landscape) and (min-height: 768px) {
+    @include bigCube;
+    .mtscube {
+      .buttons {
+        grid-row: 1/-1;
+        grid-column: 1/2;
+        flex-direction: column;
+      }
+      .cube-section {
+        grid-row: 1/-1;
+        grid-column: 2/-1;
+      }
+    }
+  }
+}
