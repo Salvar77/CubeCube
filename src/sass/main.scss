@@ -34,6 +34,7 @@ body {
   z-index: -100;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1.1);
   transform: translate(-50%, -50%) scale(1.1);
   width: 100%;
   height: 100%;
@@ -46,6 +47,7 @@ body {
   height: 100%;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.65);
   transform: translate(-50%, -50%) scale(0.65);
   opacity: 0.1;
 }
@@ -132,6 +134,7 @@ body {
   max-height: 100%;
   z-index: -10;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .hide-content {
   display: none;
@@ -253,6 +256,19 @@ body {
   max-width: 70%;
 }
 
+.mtscube .cube-section .cube-box .cube {
+  -webkit-transform-style: preserve-3d; /* Prefiks WebKit */
+  transform-style: preserve-3d;
+
+  .left,
+  .right,
+  .front,
+  .top,
+  .bottom {
+    -webkit-backface-visibility: hidden; /* Prefiks WebKit */
+    backface-visibility: hidden;
+  }
+}
 .mtscube {
   display: grid;
   grid-template-rows: 18% 82%;
@@ -306,7 +322,7 @@ body {
       align-items: center;
       height: $cubeSizeMobile;
       width: $cubeSizeMobile;
-      transition: transform 0.5s;
+      transition: transform 0.3s;
       &-scaleDown {
         transform: scale(0.5);
       }
@@ -547,7 +563,7 @@ body {
         .bottom {
           transform: translateY(50%) rotateX(270deg);
           .temp-content {
-            background-image: url(/dist/img/temp-contact.webp);
+            background-image: url(/dist/img/logo.svg);
           }
           .contact {
             position: relative;
@@ -648,6 +664,8 @@ body {
                   margin-bottom: 3em;
                 }
                 &-icon {
+                  height: 5rem;
+                  width: 5rem;
                   margin-right: 0.5em;
                 }
               }
