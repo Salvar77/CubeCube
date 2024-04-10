@@ -354,7 +354,7 @@ body {
           transform: translateZ(calc($cubeSizeMobile/2));
           z-index: 0;
           .temp-content {
-            background-image: url(/dist/img/temp-front.webp);
+            background-image: url(/dist/img/matrix-big.webp);
           }
           .boxes {
             width: 100%;
@@ -421,7 +421,7 @@ body {
         .right {
           transform: rotateY(90deg) translateZ(calc($cubeSizeMobile/2));
           .temp-content {
-            background-image: url(/dist/img/temp-drone.webp);
+            background-image: url(/dist/img/matrix-big.webp);
           }
           &__header {
             color: $pureWhite;
@@ -467,7 +467,7 @@ body {
             translateZ(calc($cubeSizeMobile/2));
           z-index: 0;
           .temp-content {
-            background-image: url(/dist/img/temp-www.webp);
+            background-image: url(/dist/img/matrix-big.webp);
           }
           &__info-box {
             display: flex;
@@ -498,7 +498,7 @@ body {
           //zdjecia 360
           transform: rotateY(270deg) translateZ(calc($cubeSizeMobile/2));
           .temp-content {
-            background-image: url(/dist/img/temp-360.webp);
+            background-image: url(/dist/img/matrix-big.webp);
           }
           &__header {
             color: $pureWhite;
@@ -538,7 +538,7 @@ body {
           transform: translateY(-50%) rotateX(90deg);
           padding-top: 5em;
           .temp-content {
-            background-image: url(/dist/img/temp-faq.webp);
+            background-image: url(/dist/img/matrix-big.webp);
           }
           &__faq-box {
             background-color: $gray;
