@@ -38,7 +38,6 @@ const showSection = (id) => {
   if (mediaQuery.matches) {
     wrapper.forEach((wrap) => wrap.classList.add("hide-content"));
     bgIcon.forEach((icon) => icon.classList.add("hide-content"));
-    tempContent.forEach((temp) => temp.classList.add("temp-content-active"));
   }
 
   setTimeout(() => cubeBox.classList.remove("cube-box-scaleDown"), 2100);
@@ -51,13 +50,6 @@ const showSection = (id) => {
     );
     setTimeout(
       () => bgIcon.forEach((icon) => icon.classList.remove("hide-content")),
-      100
-    );
-    setTimeout(
-      () =>
-        tempContent.forEach((temp) =>
-          temp.classList.remove("temp-content-active")
-        ),
       100
     );
   }
