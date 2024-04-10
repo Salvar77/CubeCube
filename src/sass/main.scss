@@ -270,6 +270,47 @@ body {
     backface-visibility: hidden;
   }
 }
+
+.front,
+.right,
+.back,
+.left,
+.top,
+.bottom {
+  /* Prefiks WebKit jest potrzebny tylko dla właściwości transform i transition */
+  -webkit-transform: translateZ(
+    calc($cubeSizeMobile/2)
+  ); /* Dla transformacji, np. przesunięcia Z */
+  transform: translateZ(calc($cubeSizeMobile/2));
+}
+
+.cube {
+  /* Transition z prefiksem */
+  -webkit-transition: -webkit-transform 1.5s linear 0.6s;
+  transition: transform 1.5s linear 0.6s;
+}
+
+.front-active,
+.right-active,
+.back-active,
+.left-active,
+.top-active,
+.bottom-active {
+  -webkit-transform: rotate3d(0, 0, 0, 360deg); /* Dla Safari */
+  transform: rotate3d(0, 0, 0, 360deg);
+}
+
+.button-menu::after,
+.btn-animation::before {
+  -webkit-transition: transform 0.3s; /* Dla Safari */
+  transition: transform 0.3s;
+}
+
+.button-menu:hover::after,
+.btn-animation:hover::before {
+  -webkit-transform: scaleX(1); /* Dla Safari */
+  transform: scaleX(1);
+}
 .mtscube {
   display: grid;
   grid-template-rows: 18% 82%;
