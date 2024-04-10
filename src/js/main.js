@@ -47,18 +47,18 @@ const showSection = (id) => {
   if (mediaQuery.matches) {
     setTimeout(
       () => wrapper.forEach((wrap) => wrap.classList.remove("hide-content")),
-      2100
+      100
     );
     setTimeout(
       () => bgIcon.forEach((icon) => icon.classList.remove("hide-content")),
-      2100
+      100
     );
     setTimeout(
       () =>
         tempContent.forEach((temp) =>
           temp.classList.remove("temp-content-active")
         ),
-      2100
+      100
     );
   }
 
