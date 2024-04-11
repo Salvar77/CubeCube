@@ -50,7 +50,7 @@ const showSection = (id) => {
     );
     setTimeout(
       () => bgIcon.forEach((icon) => icon.classList.remove("hide-content")),
-      100
+      700
     );
   }
 
